@@ -9,28 +9,46 @@ import XCTest
 @testable import HackerNews
 
 class HackerNewsTests: XCTestCase {
-
+    
+    var mockAPIObj: MockAPI?
+    var viewModelObj: NewsViewModel?
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        mockAPIObj = MockAPI()
+        viewModelObj = NewsViewModel()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        mockAPIObj = nil
+        viewModelObj = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testMockAPI() throws {
+        viewModelObj?.fetchData(url: "None") {}
+        XCTAssertEqual(viewModelObj?.getCountTotalNews(), 1)
+        let a = viewModelObj?.getNewsFor(row: 0)
+        XCTAssertEqual(a?.author, "Sai")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testDecodeData() throws {
+        let jsonStr = """
+                        {
+                            hits : [
+                                    {
+                                      author: "Ram",
+                                      created_at: "1-1-1",
+                                      num_comments: 123,
+                                      points: 199,
+                                      title: "India is developing",
+                                      url: "No Url"
+                                    }
+                                   ]
+                            }
+                        """
+        let jsonData = jsonStr.data(using: .utf8)!
+        let decodedNews = APIManager.shared.decodeData(data: jsonData)
+        print(decodedNews)
+        //XCTAssertNotNil(decodedNews?.hits)
+        
     }
-
+   
 }

@@ -12,26 +12,20 @@ class APIManager {
         if let url = URL(string: url) {
             URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
                 if let serverData = data {
-                    do{
-                        let parsedData = try JSONDecoder().decode(News.self, from: serverData)
-                        print(parsedData)
-                        completion(parsedData, nil)
-                    }
-                    catch {
-                        print("Decode error")
-                    }
+                    let decodedData = self.decodeData(data: serverData)
+                    completion(decodedData, nil)
                 }
             }.resume()
         }
     }
-//    func decodeData(data: Data) -> News? {
-//        do{
-//            let parsedData = try JSONDecoder().decode(News.self, from: data)
-//                return parsedData
-//        }
-//        catch {
-//            print("Decode error")
-//        }
-//        return nil
-//    }
+    func decodeData(data: Data) -> News? {
+        do{
+            let parsedData = try JSONDecoder().decode(News.self, from: data)
+                return parsedData
+        }
+        catch {
+            print("Decode error")
+        }
+        return nil
+    }
 }

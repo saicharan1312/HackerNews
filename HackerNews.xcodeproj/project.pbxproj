@@ -21,6 +21,7 @@
 		4E2A06492C2B5BA800287442 /* HackerNewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A06482C2B5BA800287442 /* HackerNewsUITestsLaunchTests.swift */; };
 		4E2A065A2C2B5C3600287442 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A06592C2B5C3600287442 /* APIManager.swift */; };
 		4E2A065C2C2B5D3200287442 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A065B2C2B5D3200287442 /* Model.swift */; };
+		4EF864A62C2D8FFC0020F6D4 /* MockAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF864A52C2D8FFC0020F6D4 /* MockAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4E2A06482C2B5BA800287442 /* HackerNewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4E2A06592C2B5C3600287442 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		4E2A065B2C2B5D3200287442 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4EF864A52C2D8FFC0020F6D4 /* MockAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				4E2A06592C2B5C3600287442 /* APIManager.swift */,
+				4EF864A52C2D8FFC0020F6D4 /* MockAPIManager.swift */,
 			);
 			path = "Network Manager";
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			files = (
 				4E2A065C2C2B5D3200287442 /* Model.swift in Sources */,
 				4E2A065A2C2B5C3600287442 /* APIManager.swift in Sources */,
+				4EF864A62C2D8FFC0020F6D4 /* MockAPIManager.swift in Sources */,
 				4E0C29EB2C2B61A8008939F1 /* NewsTableViewCell.swift in Sources */,
 				4E2A062A2C2B5B9E00287442 /* ViewController.swift in Sources */,
 				4E0C29F02C2B6518008939F1 /* Commons.swift in Sources */,
