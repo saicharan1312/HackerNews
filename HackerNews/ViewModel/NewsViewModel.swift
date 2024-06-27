@@ -9,8 +9,8 @@ import Foundation
 class NewsViewModel {
     private var newsArr: [Hit] = []
     func fetchData(url: String, complete: @escaping ()->()) {
-        // APIManager.shared.fetchData(url: url) { news, error in
-        MockAPI.sharedInstance.fetchData(url: url) { news, error in
+        APIManager.shared.fetchData(url: url) { news, error in
+        // MockAPI.sharedInstance.fetchData(url: url) { news, error in
             if let newsData = news?.hits {
                 self.newsArr = newsData
                 print(self.newsArr.count)
